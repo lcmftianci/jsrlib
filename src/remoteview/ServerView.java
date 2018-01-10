@@ -18,19 +18,20 @@ public class ServerView {
     private static JLabel imgamsphere;
     private static ImageIcon iIcon;
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException{
-        try {
-            OpenServer();
-            ShowUI();
-            while(true){
-                ReveivePic();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            ois.close();
-            sockClient.close();
-        }
-    }
+//    public static void main(String[] args) throws IOException, ClassNotFoundException{
+//        imgamsphere = new JLabel();
+//        try {
+//            OpenServer();
+//            ShowUI();
+//            while(true){
+//                ReveivePic();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            ois.close();
+//            sockClient.close();
+//        }
+//    }
 
     private static void ReveivePic() throws ClassNotFoundException, IOException{
         Message msg = (Message)ois.readObject();
@@ -127,7 +128,7 @@ public class ServerView {
         //控制台大小
         jf.setSize(500, 400);
         //imag_lab用于存放画面
-        imgamsphere = new JLabel();
+        //imgamsphere = new JLabel();
         jf.add(imgamsphere);
         //设置控制台可见
         jf.setVisible(true);

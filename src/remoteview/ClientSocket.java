@@ -18,20 +18,20 @@ public class ClientSocket {
     private static ObjectInputStream ois;
     private static Robot robot;
 
-    public static void main(String[] args) throws UnknownHostException, IOException, AWTException{
-      try {
-          StartConnection("s", 1);
-          MsgThread robot = new MsgThread(ois);
-          Thread t = new Thread(robot, "robot");
-          t.start();
-          while(true){
-              CapturePic();
-          }
-      }catch (Exception e){
-          oos.close();
-          socket.close();
-      }
-    }
+//    public static void main(String[] args) throws UnknownHostException, IOException, AWTException{
+//      try {
+//          StartConnection("s", 1);
+//          MsgThread robot = new MsgThread(ois);
+//          Thread t = new Thread(robot, "robot");
+//          t.start();
+//          while(true){
+//              CapturePic();
+//          }
+//      }catch (Exception e){
+//          oos.close();
+//          socket.close();
+//      }
+//    }
 
     public static void StartConnection(String IP,int port) throws UnknownHostException, IOException, AWTException {
        Socket socket = new Socket("192.168.0.106",7777);
